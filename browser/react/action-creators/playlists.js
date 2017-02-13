@@ -9,7 +9,7 @@ import axios from 'axios';
 import {hashHistory} from 'react-router';
 import {convertSong} from '../utils';
 
-export const receivePlaylists = playlists => ({
+export const receivePlaylists = playlists => ({   
   type: RECEIVE_PLAYLISTS,
   playlists
 });
@@ -46,7 +46,6 @@ export const addNewPlaylist = playlistName => {
         dispatch(receivePlaylists(newListOfPlaylists));
         hashHistory.push(`/playlists/${playlist.id}`)
       });
-
   };
 
 };

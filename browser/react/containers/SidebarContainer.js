@@ -21,8 +21,7 @@ export default class extends Component {
 
   render() {
     return (
-      <Sidebar playlists={this.state.list}/>
+      <Sidebar playlists={this.state.list} />
     );
   }
-
 }
