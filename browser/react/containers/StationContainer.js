@@ -1,30 +1,20 @@
 import{ connect } from  'react-redux';
-import Stations from '../components/Stations';
+import Station from '../components/Station';
+import Songs from '../components/Songs';
 import React from 'react';
-
-const convertSongsToStations = function (songsArray) {
-
-  const stations = {};
-  
-  songsArray.forEach(song => {
-    const genre = song.genre;
-    stations[genre] = stations[genre] || [];
-    stations[genre].push(song);
-  });
-
-  return stations;
-};
 
 const mapStateToProps = (state, ownProps) => {
 
-	    return {
-	    	stations: convertSongsToStations(state.songs)
-	    };
+	// console.log(ownProps)
+
+    return {
+	  	genreName: ownProps.params.stationId,
+	  	songs: state.songs
+    };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-		return {};
+	return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Stations);
-
+export default connect(mapStateToProps, mapDispatchToProps)(Station);

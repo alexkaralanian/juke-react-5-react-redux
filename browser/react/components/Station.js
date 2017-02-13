@@ -1,6 +1,7 @@
 import React from 'react';
 import Songs from './Songs';
 
+
 const DUMMY_GENRE_NAME = 'Jazz';
 const DUMMY_SONGS = [{
   id: 1,
@@ -12,10 +13,15 @@ const DUMMY_CURRENT_SONG = {};
 const DUMMY_IS_PLAYING = false;
 const DUMMY_TOGGLE_ONE = function () {};
 
+
+
 export default function (props) {
+
+	console.log(props.songs)
+
   return (
     <div>
-      <h3>{ DUMMY_GENRE_NAME } Station</h3>
+      <h3>{ props.genreName } Station</h3>
       <Songs 
         songs={DUMMY_SONGS} 
         currentSong={DUMMY_CURRENT_SONG} 
