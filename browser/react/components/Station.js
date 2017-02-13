@@ -1,5 +1,6 @@
 import React from 'react';
 import Songs from './Songs';
+import {convertSong} from '../utils'
 
 
 const DUMMY_GENRE_NAME = 'Jazz';
@@ -17,13 +18,14 @@ const DUMMY_TOGGLE_ONE = function () {};
 
 export default function (props) {
 
+
 	console.log(props.songs)
 
   return (
     <div>
       <h3>{ props.genreName } Station</h3>
       <Songs 
-        songs={DUMMY_SONGS} 
+        songs={ props.songs } 
         currentSong={DUMMY_CURRENT_SONG} 
         isPlaying={DUMMY_IS_PLAYING} 
         toggleOne={DUMMY_TOGGLE_ONE}

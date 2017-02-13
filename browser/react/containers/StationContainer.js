@@ -5,11 +5,13 @@ import React from 'react';
 
 const mapStateToProps = (state, ownProps) => {
 
-	// console.log(ownProps)
+	const filteredSongs = state.songs.filter(song => song.genre === ownProps.params.stationId)
+
+	console.log(filteredSongs)
 
     return {
 	  	genreName: ownProps.params.stationId,
-	  	songs: state.songs
+	  	songs: filteredSongs
     };
 }
 
@@ -18,3 +20,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Station);
+
